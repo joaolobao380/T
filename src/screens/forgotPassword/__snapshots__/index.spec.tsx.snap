@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForgotPassword Screen renders correctly 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+        "flex": 1,
+      },
+      {
+        "paddingBottom": 0,
+      },
+    ]
+  }
+  testID="forgot_password_testID_keyboard_avoiding_view"
+>
+  <RNGestureHandlerButton
+    activeOpacity={0.3}
+    borderless={true}
+    collapsable={false}
+    delayLongPress={600}
+    handlerTag={6}
+    handlerType="NativeViewGestureHandler"
+    onActiveStateChange={[Function]}
+    onGestureEvent={[Function]}
+    onGestureHandlerEvent={[Function]}
+    onGestureHandlerStateChange={[Function]}
+    onHandlerStateChange={[Function]}
+    onPress={[Function]}
+    style={
+      {
+        "marginLeft": 16,
+        "marginTop": 64,
+        "opacity": 1,
+        "position": "absolute",
+        "zIndex": 200,
+      }
+    }
+    testID="forgot_passowrd_testID_back_button"
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight="32"
+      bbWidth="32"
+      fill="none"
+      focusable={false}
+      height={32}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      stroke="white"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 32,
+            "width": 32,
+          },
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+      width={32}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4294967295,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth="2"
+      >
+        <RNSVGPath
+          d="m15 18-6-6 6-6"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4294967295,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth="2"
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </RNGestureHandlerButton>
+  <RCTScrollView
+    style={
+      {
+        "backgroundColor": "#fff",
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View>
+        <View
+          style={
+            {
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            resizeMode="cover"
+            source={1}
+            style={
+              {
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "marginHorizontal": 16,
+              "marginTop": 32,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#444444",
+                "fontFamily": "Poppins-Regular",
+                "fontSize": 14,
+                "textAlign": "center",
+              }
+            }
+          >
+            Será enviado um e-mail de redefinição de senha para o e-mail digitado abaixo.
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "marginTop": 40,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <View>
+            <View
+              style={
+                {
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "color": "#2A2A2A",
+                    "fontFamily": "Poppins-Regular",
+                    "fontSize": 14,
+                    "marginBottom": 4,
+                  }
+                }
+              >
+                E-mail
+              </Text>
+              <TextInput
+                keyboardType="email-address"
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Ex: email@email.com"
+                placeholderTextColor="#BBBBBB"
+                secureTextEntry={false}
+                style={
+                  [
+                    {
+                      "backgroundColor": "white",
+                      "borderColor": "#2A2A2A",
+                      "borderRadius": 5,
+                      "borderWidth": 1,
+                      "color": "#2A2A2A",
+                      "fontFamily": "Poppins-Regular",
+                      "fontSize": 16,
+                      "padding": 16,
+                    },
+                    false,
+                  ]
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              {
+                "marginTop": 32,
+              }
+            }
+          >
+            <View
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": false,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#2A2A2A",
+                    "borderRadius": 4,
+                    "justifyContent": "center",
+                    "paddingVertical": 16,
+                    "width": "100%",
+                  },
+                  false,
+                  false,
+                ]
+              }
+            >
+              <Text
+                style={
+                  {
+                    "color": "#FFFFFF",
+                    "fontFamily": "Poppins-Regular",
+                    "fontSize": 16,
+                  }
+                }
+              >
+                Enviar
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
