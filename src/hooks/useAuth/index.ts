@@ -23,19 +23,7 @@ const useAuth = (): AuthHook => {
   const [loading, setLoading] = useState(true);
 
   const login = async (email: string, password: string) => {
-    return signInWithEmailAndPassword(auth, email, password).catch((error) => {
-      if (error.code === 'auth/wrong-password') {
-        Toast.show({
-          type: 'error',
-          text2: 'Senha incorreta. Por favor, tente novamente.',
-        });
-      } else {
-        Toast.show({
-          type: 'error',
-          text2: 'Tente novamente mais tarde.',
-        });
-      }
-    });
+    await signInWithEmailAndPassword(auth, email, password);
   };
 
   const logout = () => {
