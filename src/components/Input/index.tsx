@@ -4,22 +4,25 @@ import { View, Text, TextInput } from 'react-native';
 
 import { styles } from './styles';
 
-interface CustomInputProps {
-  control: Control;
+interface InputProps {
+  control: Control<any>;
   name: string;
   label: string;
   inputType?: 'default' | 'email-address' | 'password';
   placeholder: string;
+  errorMessage?: string;
 }
 
-export const Input: React.FC<CustomInputProps> = ({
+export const Input: React.FC<InputProps> = ({
   control,
   name,
   label,
   inputType = 'default',
   placeholder = 'placeholder',
+  errorMessage,
   ...props
 }) => {
+  const invalid = !!errorMessage;
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
@@ -28,7 +31,8 @@ export const Input: React.FC<CustomInputProps> = ({
         name={name}
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
-            style={styles.input}
+            placeholderTextColor="#BBBBBB"
+            style={[styles.input, !!errorMessage && styles.errorInput]}
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -39,6 +43,7 @@ export const Input: React.FC<CustomInputProps> = ({
           />
         )}
       />
+      {invalid && <Text style={styles.errorText}>{errorMessage}</Text>}
     </View>
   );
 };

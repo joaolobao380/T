@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoadingButton renders correctly 1`] = `
+exports[`LoadingButton Renders correctly 1`] = `
 <View
   accessibilityState={
     {
@@ -36,6 +36,7 @@ exports[`LoadingButton renders correctly 1`] = `
       {
         "alignItems": "center",
         "backgroundColor": "#2A2A2A",
+        "borderRadius": 4,
         "justifyContent": "center",
         "paddingVertical": 16,
         "width": "100%",
@@ -49,6 +50,7 @@ exports[`LoadingButton renders correctly 1`] = `
     style={
       {
         "color": "#FFFFFF",
+        "fontFamily": "Poppins-Regular",
         "fontSize": 16,
       }
     }
@@ -58,7 +60,7 @@ exports[`LoadingButton renders correctly 1`] = `
 </View>
 `;
 
-exports[`LoadingButton renders correctly when loading 1`] = `
+exports[`LoadingButton Renders correctly when loading 1`] = `
 <View
   accessibilityState={
     {
@@ -94,6 +96,7 @@ exports[`LoadingButton renders correctly when loading 1`] = `
       {
         "alignItems": "center",
         "backgroundColor": "#2A2A2A",
+        "borderRadius": 4,
         "justifyContent": "center",
         "paddingVertical": 16,
         "width": "100%",
