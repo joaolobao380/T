@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, Text, ActivityIndicator, Pressable } from 'react-native';
+import { Text, ActivityIndicator, Pressable } from 'react-native';
 
 import { styles } from './styles';
 

@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
+    borderRadius: 4,
   },
   loadingButton: {
     backgroundColor: '#444444',
@@ -17,5 +18,6 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: '#FFFFFF',
     fontSize: 16,
+    fontFamily: 'Poppins-Regular',
   },
 });

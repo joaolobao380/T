@@ -14,7 +14,7 @@ describe('LoadingButton', () => {
     expect(getByTestId('activity-indicator')).toBeTruthy();
   });
 
-  it('should call onPress when pressed', () => {
+  it('Should call onPress when pressed', () => {
     const mockOnPress = jest.fn();
     const { getByText } = render(
       <Button title="Press Me" isLoading={false} onPress={mockOnPress} />
@@ -25,12 +25,12 @@ describe('LoadingButton', () => {
     expect(mockOnPress).toHaveBeenCalled();
   });
 
-  it('renders correctly', () => {
+  it('Renders correctly', () => {
     const { toJSON } = render(<Button title="Click Me" isLoading={false} onPress={() => {}} />);
     expect(toJSON()).toMatchSnapshot();
   });
 
-  it('renders correctly when loading', () => {
+  it('Renders correctly when loading', () => {
     const { toJSON } = render(<Button title="Loading..." isLoading onPress={() => {}} />);
     expect(toJSON()).toMatchSnapshot();
   });
