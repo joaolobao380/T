@@ -1,8 +1,8 @@
 import { Button } from '@components/Button';
 import { Input } from '@components/Input';
 import { yupResolver } from '@hookform/resolvers/yup';
-import useAuth from '@hooks/useAuth';
-import { NavigatatorRoutesProps } from '@navigation';
+import { useAuth } from '@hooks/useAuth';
+import { NavigatatorRoutesUnAuthenticatedProps } from '@navigation/unAuthenticated';
 import { useNavigation } from '@react-navigation/native';
 import { messageToast, errorMessageFirebase, positionToast, textToast } from '@utils/enums';
 import { LoginSchema } from '@validation/login';
@@ -26,7 +26,7 @@ import { LoginProps } from './types';
 export const Login = () => {
   const { login } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
-  const { navigate } = useNavigation<NavigatatorRoutesProps>();
+  const { navigate } = useNavigation<NavigatatorRoutesUnAuthenticatedProps>();
   const {
     control,
     handleSubmit,

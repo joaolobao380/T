@@ -1,8 +1,14 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { renderHook, act } from '@testing-library/react-hooks';
-import { onAuthStateChanged, sendPasswordResetEmail } from 'firebase/auth';
+import { keyAsyncUser } from '@utils/enums';
+import {
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 
-import useAuth from './index';
-import { auth } from '../../../utils/firebase';
+import { AuthProvider, useAuth } from './index';
+import { auth } from '../../services/firebase';
 
 jest.mock('firebase/app', () => {
   return {
@@ -15,7 +21,11 @@ jest.mock('firebase/auth', () => {
     getAuth: jest.fn(() => ({})),
     signInWithEmailAndPassword: jest.fn(() =>
       Promise.resolve({
-        user: { email: 'test@example.com', uuid: 'uuid do usuário' },
+        user: {
+          email: 'test@example.com',
+          uuid: 'uuid do usuário',
+          getIdToken: jest.fn(() => Promise.resolve('mockToken')),
+        },
       })
     ),
     signOut: jest.fn(() => Promise.resolve()),
@@ -31,19 +41,24 @@ describe('useAuth Hook', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
-  it('Should sign in a user', async () => {
-    const { result } = renderHook(() => useAuth());
+
+  const Wrapper = ({ children }: any) => <AuthProvider>{children}</AuthProvider>;
+
+  it('Should sign in a user and save token', async () => {
+    const { result } = renderHook(() => useAuth(), { wrapper: Wrapper });
     const email = 'test@example.com';
     const password = 'password';
 
     await act(async () => {
       await result.current.login(email, password);
     });
-    expect(result.current.currentUser).toBeTruthy();
+
+    expect(signInWithEmailAndPassword).toHaveBeenCalledWith(auth, email, password);
+    expect(AsyncStorage.setItem).toHaveBeenCalledWith(keyAsyncUser.USER_TOKEN_KEY, 'mockToken');
   });
 
   it('Should send a password reset email', async () => {
-    const { result } = renderHook(() => useAuth());
+    const { result } = renderHook(() => useAuth(), { wrapper: Wrapper });
     const email = 'forgot@example.com';
 
     await act(async () => {
@@ -53,13 +68,14 @@ describe('useAuth Hook', () => {
   });
 
   const authState = onAuthStateChanged as any;
+
   it('Should log out a user', async () => {
     authState.mockImplementation((auth: any, callback: any) => {
       callback(null);
       return jest.fn();
     });
 
-    const { result } = renderHook(() => useAuth());
+    const { result } = renderHook(() => useAuth(), { wrapper: Wrapper });
 
     await act(async () => {
       await result.current.logout();

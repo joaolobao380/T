@@ -1,7 +1,7 @@
 import { Button } from '@components/Button';
 import { Input } from '@components/Input';
 import { yupResolver } from '@hookform/resolvers/yup';
-import useAuth from '@hooks/useAuth';
+import { useAuth } from '@hooks/useAuth';
 import { useNavigation } from '@react-navigation/native';
 import { messageToast, positionToast, textToast } from '@utils/enums';
 import { ForgotPasswordSchema } from '@validation/forgotPassword';

@@ -1,7 +1,6 @@
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import { textToast } from '@utils/enums';
 import React from 'react';
-import { Platform } from 'react-native';
 import Toast from 'react-native-toast-message';
 
 import { ForgotPassword } from '.';
@@ -22,10 +21,12 @@ jest.mock('@react-navigation/native', () => ({
 const mockResetPassword = jest.fn();
 
 jest.mock('@hooks/useAuth', () => ({
-  __esModule: true,
-  default: () => ({
+  useAuth: jest.fn().mockImplementation(() => ({
     resetPassword: mockResetPassword,
-  }),
+    currentUser: null,
+    loading: false,
+    isLogged: false,
+  })),
 }));
 
 jest.mock('firebase/app', () => {

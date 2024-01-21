@@ -1,4 +1,3 @@
-// CustomInput.test.tsx
 import { fireEvent, render, waitFor } from '@testing-library/react-native';
 import { messageToast, errorMessageFirebase } from '@utils/enums';
 import React from 'react';
@@ -51,13 +50,15 @@ jest.mock('react-native-toast-message', () => {
     show: jest.fn(),
   };
 });
-
 const mockLogin = jest.fn();
+
 jest.mock('@hooks/useAuth', () => ({
-  __esModule: true,
-  default: () => ({
+  useAuth: jest.fn().mockImplementation(() => ({
     login: mockLogin,
-  }),
+    currentUser: null,
+    loading: false,
+    isLogged: false,
+  })),
 }));
 
 describe('Login screen', () => {
