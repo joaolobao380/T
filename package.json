@@ -75,7 +75,8 @@
       "^@hooks/(.*)$": "<rootDir>/src/hooks/$1",
       "^@utils/(.*)$": "<rootDir>/src/utils/$1",
       "^@screens/(.*)$": "<rootDir>/src/screens/$1",
-      "^@assets/(.*)$": "<rootDir>/src/assets/$1"
+      "^@assets/(.*)$": "<rootDir>/src/assets/$1",
+      "@react-native-async-storage/async-storage": "@react-native-async-storage/async-storage/jest/async-storage-mock"
     },
     "coverageThreshold": {
       "global": {
