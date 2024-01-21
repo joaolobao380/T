@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 
 import { toastConfig } from '@helpers/configToast';
+import { AuthProvider } from '@hooks/useAuth';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
@@ -31,8 +32,10 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <RootStack />
-      <Toast config={toastConfig} />
+      <AuthProvider>
+        <RootStack />
+        <Toast config={toastConfig} />
+      </AuthProvider>
     </View>
   );
 }
