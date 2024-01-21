@@ -18,3 +18,7 @@ export enum textToast {
 export enum positionToast {
   POSITION = 'bottom',
 }
+
+export enum keyAsyncUser {
+  USER_TOKEN_KEY = '@userToken',
+}
