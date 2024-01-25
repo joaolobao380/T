@@ -22,3 +22,9 @@ export enum positionToast {
 export enum keyAsyncUser {
   USER_TOKEN_KEY = '@userToken',
 }
+
+export enum navBottomName {
+  HOME = 'Home',
+  REPORT = 'Report',
+  MENU = 'Menu',
+}

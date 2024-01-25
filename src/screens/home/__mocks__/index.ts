@@ -1,0 +1,32 @@
+export const mockToDo = [
+  {
+    id: 'ads65f4asdf654asd6f54',
+    title: 'Você vai vencer...',
+    status: 'on',
+    futureList: true,
+    totalPoints: 21,
+    currentPoints: 16,
+    createdAt: '2024-01-19Z08:00',
+    updatedAt: '2024-01-18Z08:00',
+  },
+  {
+    id: 'asdfasdfasdf5d43s5',
+    title: 'Seja ativo...',
+    status: 'off',
+    futureList: false,
+    totalPoints: 34,
+    currentPoints: 34,
+    createdAt: '2024-01-18Z08:00',
+    updatedAt: '2024-01-18Z23:59',
+  },
+  {
+    id: 'asdfasdfasdf5d34s5',
+    title: 'Você é incrive...',
+    status: 'off',
+    futureList: false,
+    totalPoints: 8,
+    currentPoints: 8,
+    createdAt: '2024-01-18Z08:00',
+    updatedAt: '2024-01-18Z23:59',
+  },
+];

@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FloatingTabBar renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignSelf": "center",
+      "backgroundColor": "transparent",
+      "borderRadius": 100,
+      "bottom": 20,
+      "flexDirection": "row",
+      "height": 58,
+      "marginHorizontal": 36,
+      "paddingHorizontal": 1,
+      "position": "absolute",
+      "width": 167,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": true,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "opacity": 1,
+      }
+    }
+    testID="Home-icon"
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 27,
+          "height": 54,
+          "justifyContent": "center",
+          "padding": 15,
+          "width": 54,
+        }
+      }
+    >
+      <HomeIcon
+        color="#2A2A2A"
+        size={25}
+      />
+    </View>
+  </View>
+  <View
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "opacity": 1,
+      }
+    }
+    testID="Report-icon"
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#2A2A2A",
+          "borderRadius": 0,
+          "height": 0,
+          "justifyContent": "center",
+          "padding": 0,
+          "width": 0,
+        }
+      }
+    >
+      <BarChartIcon
+        color="white"
+        size={25}
+      />
+    </View>
+  </View>
+  <View
+    accessibilityRole="button"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "opacity": 1,
+      }
+    }
+    testID="Menu-icon"
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#2A2A2A",
+          "borderRadius": 0,
+          "height": 0,
+          "justifyContent": "center",
+          "padding": 0,
+          "width": 0,
+        }
+      }
+    >
+      <MenuIcon
+        color="white"
+        size={25}
+      />
+    </View>
+  </View>
+</View>
+`;

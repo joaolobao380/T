@@ -6,7 +6,6 @@ exports[`Login screen renders correctly 1`] = `
   style={
     [
       {
-        "backgroundColor": "#2A2A2A",
         "flex": 1,
         "flexGrow": 1,
       },
@@ -24,7 +23,6 @@ exports[`Login screen renders correctly 1`] = `
     onGestureHandlerStateChange={[Function]}
     style={
       {
-        "backgroundColor": "white",
         "flex": 1,
       }
     }
