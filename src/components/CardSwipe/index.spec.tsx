@@ -9,21 +9,32 @@ jest.mock('react-native/Libraries/Alert/Alert', () => ({
 
 describe('CardSwipe Component', () => {
   it('renders correctly', () => {
-    const { getByText } = render(<CardSwipe title="Test Card" status="on" />);
+    const { getByText } = render(
+      <CardSwipe title="Test Card" status="on" onPress={() => console.log('click-me')} />
+    );
     expect(getByText('Test Card')).toBeTruthy();
     expect(getByText('Ligado')).toBeTruthy();
   });
 
   it('displays the correct status', () => {
-    const { getByText, rerender } = render(<CardSwipe title="Test Card" status="on" />);
+    const { getByText, rerender } = render(
+      <CardSwipe title="Test Card" status="on" onPress={() => console.log('click-me')} />
+    );
     expect(getByText('Ligado')).toBeTruthy();
 
-    rerender(<CardSwipe title="Test Card" status="off" />);
+    rerender(<CardSwipe title="Test Card" status="off" onPress={() => console.log('click-me')} />);
     expect(getByText('Desligado')).toBeTruthy();
+
+    rerender(
+      <CardSwipe title="Test Card" status="pending" onPress={() => console.log('click-me')} />
+    );
+    expect(getByText('Futura')).toBeTruthy();
   });
 
   it('renders correctly', () => {
-    const { toJSON } = render(<CardSwipe title="Test Card" status="on" />);
+    const { toJSON } = render(
+      <CardSwipe title="Test Card" status="on" onPress={() => console.log('click-me')} />
+    );
     expect(toJSON()).toMatchSnapshot();
   });
 });

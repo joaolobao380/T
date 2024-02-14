@@ -6,7 +6,7 @@ import { Swipeable } from 'react-native-gesture-handler';
 import { styles } from './styles';
 import { CardSwipeProps } from './types';
 
-export const CardSwipe = ({ title, status }: CardSwipeProps) => {
+export const CardSwipe = ({ title, status, onPress }: CardSwipeProps) => {
   const swipeableRef = useRef<Swipeable>(null);
   const handleDelete = () => {
     Alert.alert(
@@ -18,7 +18,7 @@ export const CardSwipe = ({ title, status }: CardSwipeProps) => {
           onPress: () => swipeableRef.current?.close(),
           style: 'cancel',
         },
-        { text: 'Excluir', onPress: () => console.log('Excluído') },
+        { text: 'Excluir', onPress },
       ],
       { cancelable: false }
     );
@@ -31,6 +31,25 @@ export const CardSwipe = ({ title, status }: CardSwipeProps) => {
     );
   };
 
+  const getStatusBasedInStatus = () => {
+    if (status === 'on') {
+      return {
+        style: styles.tagContainer,
+        title: 'Ligado',
+      };
+    } else if (status === 'off') {
+      return {
+        style: styles.tagContainerOff,
+        title: 'Desligado',
+      };
+    } else {
+      return {
+        style: styles.tagContainerPending,
+        title: 'Futura',
+      };
+    }
+  };
+
   return (
     <Swipeable
       containerStyle={{ backgroundColor: '#2A2A2A', borderRadius: 8 }}
@@ -41,8 +60,8 @@ export const CardSwipe = ({ title, status }: CardSwipeProps) => {
         <View style={styles.cardContent}>
           <Text style={styles.title}>{title}</Text>
 
-          <View style={status === 'on' ? styles.tagContainer : styles.tagContainerOff}>
-            <Text style={styles.tag}>{status === 'on' ? 'Ligado' : 'Desligado'}</Text>
+          <View style={getStatusBasedInStatus()?.style}>
+            <Text style={styles.tag}>{getStatusBasedInStatus().title}</Text>
           </View>
         </View>
       </View>

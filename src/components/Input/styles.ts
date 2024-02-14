@@ -10,14 +10,33 @@ export const styles = StyleSheet.create({
     marginBottom: 4,
   },
   input: {
-    borderColor: '#2A2A2A',
-    borderWidth: 1,
-    backgroundColor: 'white',
     color: '#2A2A2A',
     fontSize: 16,
     fontFamily: 'Poppins-Regular',
+  },
+
+  containerInput: {
     padding: 16,
     borderRadius: 5,
+    borderColor: '#2A2A2A',
+    borderWidth: 1,
+    backgroundColor: 'white',
+  },
+
+  containerInputDate: {
+    padding: 12,
+    borderRadius: 5,
+    borderColor: '#2A2A2A',
+    borderWidth: 1,
+    backgroundColor: 'white',
+    alignItems: 'flex-start',
+    margin: 0,
+  },
+
+  inputDate: {
+    color: '#2A2A2A',
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
   },
   errorInput: {
     borderColor: 'red',

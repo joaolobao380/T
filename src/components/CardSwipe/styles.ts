@@ -55,4 +55,10 @@ export const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
+  tagContainerPending: {
+    backgroundColor: '#FF9F46',
+    borderRadius: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+  },
 });

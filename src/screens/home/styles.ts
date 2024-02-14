@@ -58,4 +58,17 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     color: '#2A2A2A',
   },
+  containerFlatList: {
+    flex: 1,
+  },
+  emptyList: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexGrow: 1,
+  },
+  textEmptyList: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 16,
+    color: '#BBBBBB',
+  },
 });

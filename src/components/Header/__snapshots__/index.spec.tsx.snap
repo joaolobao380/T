@@ -148,7 +148,10 @@ exports[`Header Component renders correctly 1`] = `
   <Text
     style={
       {
+        "color": "#2A2A2A",
         "flex": 1,
+        "fontFamily": "Poppins-Regular",
+        "fontSize": 16,
         "textAlign": "center",
       }
     }

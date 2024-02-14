@@ -7,6 +7,7 @@ exports[`CustomInput renders correctly 1`] = `
       "width": "100%",
     }
   }
+  testID="input_testID"
 >
   <Text
     style={
@@ -20,29 +21,37 @@ exports[`CustomInput renders correctly 1`] = `
   >
     E-mail
   </Text>
-  <TextInput
-    keyboardType="default"
-    onBlur={[Function]}
-    onChangeText={[Function]}
-    placeholder="Ex: fulano@t.com"
-    placeholderTextColor="#BBBBBB"
-    secureTextEntry={false}
+  <View
     style={
-      [
-        {
-          "backgroundColor": "white",
-          "borderColor": "#2A2A2A",
-          "borderRadius": 5,
-          "borderWidth": 1,
-          "color": "#2A2A2A",
-          "fontFamily": "Poppins-Regular",
-          "fontSize": 16,
-          "padding": 16,
-        },
-        false,
-      ]
+      {
+        "backgroundColor": "white",
+        "borderColor": "#2A2A2A",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "padding": 16,
+      }
     }
-    value=""
-  />
+  >
+    <TextInput
+      keyboardType="default"
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      placeholder="Ex: fulano@t.com"
+      placeholderTextColor="#BBBBBB"
+      secureTextEntry={false}
+      style={
+        [
+          {
+            "color": "#2A2A2A",
+            "fontFamily": "Poppins-Regular",
+            "fontSize": 16,
+          },
+          false,
+        ]
+      }
+      testID="input_testID_normal"
+      value=""
+    />
+  </View>
 </View>
 `;

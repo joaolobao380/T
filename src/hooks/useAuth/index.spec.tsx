@@ -37,6 +37,12 @@ jest.mock('firebase/auth', () => {
   };
 });
 
+jest.mock('firebase/firestore', () => {
+  return {
+    getFirestore: jest.fn(() => ({})),
+  };
+});
+
 describe('useAuth Hook', () => {
   beforeEach(() => {
     jest.clearAllMocks();

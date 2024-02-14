@@ -1,21 +1,34 @@
-import { ChevronDown } from 'lucide-react-native';
+import { ChevronDown, ChevronUp } from 'lucide-react-native'; // Import ChevronUp para indicar quando o acordeão está aberto
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-export const AccordionCadList = ({ children }: React.ReactNode) => {
-  const [title, setTitle] = useState('Tenha fé...');
+import { styles } from './styles';
+import { AccordionCadListProps } from './types';
+
+export const AccordionCadList = ({
+  children,
+  title,
+  testID = 'accordion_toggle_button',
+}: AccordionCadListProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <View style={{ backgroundColor: '#EBEBEB', padding: 16 }}>
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <View>
-          <Text>{title}</Text>
+    <View style={styles.container}>
+      <TouchableOpacity onPress={toggleAccordion} testID={testID}>
+        <View style={styles.containerTitleAndIcon}>
+          <View>
+            <Text style={styles.titleAccordion}>{title}</Text>
+          </View>
+
+          {isOpen ? <ChevronUp color="#444444" /> : <ChevronDown color="#444444" />}
         </View>
-        <TouchableOpacity>
-          <ChevronDown color="#444444" />
-        </TouchableOpacity>
-      </View>
-      <View>{children}</View>
+      </TouchableOpacity>
+
+      {isOpen && <View>{children}</View>}
     </View>
   );
 };

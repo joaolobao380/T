@@ -57,6 +57,16 @@ describe('CustomInput', () => {
     expect(input.props.style).toContainEqual(styles.errorInput);
   });
 
+  it('renders a date picker when inputType is date', () => {
+    jest.mock('@react-native-community/datetimepicker', () => 'DateTimePicker');
+
+    const { getByTestId } = render(
+      <WrapperComponent inputType="date" errorMessage="" defaultValue={new Date()} />
+    );
+    const datePicker = getByTestId('input_testID_normal');
+    expect(datePicker).toBeTruthy();
+  });
+
   it('renders correctly', () => {
     const { toJSON } = render(<WrapperComponent errorMessage="" />);
     expect(toJSON()).toMatchSnapshot();
