@@ -4,7 +4,7 @@ import { toastConfig } from '@helpers/configToast';
 import { AuthProvider } from '@hooks/useAuth';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Toast from 'react-native-toast-message';
 
@@ -28,6 +28,13 @@ export default function App() {
 
   if (!fontsLoaded) {
     return null;
+  }
+
+  if (process.env.NODE_ENV === 'development') {
+    const whyDidYouRender = require('@welldone-software/why-did-you-render');
+    whyDidYouRender(React, {
+      trackAllPureComponents: true,
+    });
   }
 
   return (
