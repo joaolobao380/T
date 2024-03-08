@@ -1,0 +1,61 @@
+name: E2E Tests with Maestro on iOS Simulator
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  e2e-tests:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Setup do Node.js e instalação de dependências do projeto
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install npm dependencies
+        run: npm install
+
+      # Setup do Expo CLI
+      - name: Install Expo CLI
+        run: npm install -g expo-cli
+
+      # Executar expo prebuild para preparar o projeto nativo
+      - name: Run expo prebuild
+        run: expo prebuild --platform ios
+
+      # Instalação do Maestro
+      - name: Install Maestro
+        run: curl -Ls "https://get.maestro.mobile.dev" | bash
+
+      # Compilação do app para o simulador iOS utilizando Xcode
+      - name: Build iOS App
+        run: |
+          xcodebuild -workspace ios/T.xcworkspace -scheme T -configuration Debug -sdk iphonesimulator -derivedDataPath ./build
+
+      # Iniciar o simulador iOS
+      - name: Start iOS Simulator
+        run: |
+          device="iPhone 8"
+          os_version="14.4"
+          xcrun simctl boot "platform=iOS Simulator,name=$device,OS=$os_version"
+          sleep 30
+
+      # Instalar o app no simulador
+      - name: Install App on Simulator
+        run: |
+          app_path="./build/Build/Products/Debug-iphonesimulator/T.app"
+          xcrun simctl install booted "$app_path"
+
+      # Iniciar o app no simulador
+      - name: Launch App on Simulator
+        run: |
+          bundle_id="com.jv.t"
+          xcrun simctl launch booted "$bundle_id"
+
+      # Executar os testes de UI com o Maestro
+      - name: Run Maestro Studio
+        run: maestro studio ./arquivo.yaml
