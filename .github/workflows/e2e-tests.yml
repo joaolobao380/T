@@ -49,8 +49,8 @@ jobs:
       # Iniciar o simulador iOS
       - name: Start iOS Simulator
         run: |
-          device="iPhone 8"
-          os_version="14.4"
+          device="iPhone 11"
+          os_version="16.4"
           xcrun simctl boot "platform=iOS Simulator,name=$device,OS=$os_version"
           sleep 30
 
