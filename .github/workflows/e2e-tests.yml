@@ -14,7 +14,7 @@ jobs:
       - name: Setup Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-            xcode-version: '15.1.0'
+            xcode-version: '14.2.0'
 
       # Setup do Node.js e instalação de dependências do projeto
       - name: Setup Node.js
