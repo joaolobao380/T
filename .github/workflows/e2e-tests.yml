@@ -27,6 +27,16 @@ jobs:
       - name: Run expo prebuild
         run: npx expo prebuild --platform ios
 
+      - name: Modify Podfile for modular headers
+        run: |
+          echo "use_modular_headers!" >> ios/Podfile
+
+      # Instalação do CocoaPods com o Podfile modificado
+      - name: Install Pods
+        run: |
+         cd ios
+         pod install    
+
       # Instalação do Maestro
       - name: Install Maestro
         run: curl -Ls "https://get.maestro.mobile.dev" | bash
