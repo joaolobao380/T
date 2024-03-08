@@ -25,7 +25,7 @@ jobs:
 
       # Executar expo prebuild para preparar o projeto nativo
       - name: Run expo prebuild
-        run: expo prebuild --platform ios
+        run: npx expo prebuild --platform ios
 
       # Instalação do Maestro
       - name: Install Maestro
