@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '18.12.1'
       - name: Install npm dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       # Setup do Expo CLI
       - name: Install Expo CLI
