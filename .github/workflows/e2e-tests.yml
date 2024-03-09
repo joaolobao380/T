@@ -46,11 +46,11 @@ jobs:
       - name: Install Maestro
         run: curl -Ls "https://get.maestro.mobile.dev" | bash
      
-      - name: Clean CocoaPods Cache
-        run: pod cache clean --all
+    #   - name: Clean CocoaPods Cache
+    #     run: pod cache clean --all
 
-      - name: Clean Xcode build
-        run: xcodebuild -workspace ios/T.xcworkspace -scheme T clean
+    #   - name: Clean Xcode build
+    #     run: xcodebuild -workspace ios/T.xcworkspace -scheme T clean
 
       # Compilação do app para o simulador iOS utilizando Xcode
       - name: Build iOS App
