@@ -64,8 +64,8 @@ jobs:
       # Iniciar o simulador iOS
       - name: Start iOS Simulator
         run: |
-          xcrun simctl boot F73A6F20-C53B-4B22-B423-453E243D2D1E
-          sleep 30
+          xcrun simctl boot B218EDE0-92B1-4775-A919-D647FDBDD6FE
+          sleep 60
 
       # Instalar o app no simulador
       - name: Install App on Simulator
