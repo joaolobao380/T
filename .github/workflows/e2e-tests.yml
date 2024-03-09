@@ -64,9 +64,7 @@ jobs:
       # Iniciar o simulador iOS
       - name: Start iOS Simulator
         run: |
-          device="iPhone 14"
-          os_version="17.2"
-          xcrun simctl boot "platform=iOS Simulator,name=$device,OS=$os_version"
+          xcrun simctl boot F73A6F20-C53B-4B22-B423-453E243D2D1E
           sleep 30
 
       # Instalar o app no simulador
