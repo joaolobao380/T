@@ -48,8 +48,10 @@ jobs:
 
       # Instalação do Maestro
       - name: Install Maestro
-        run: curl -Ls "https://get.maestro.mobile.dev" | bash
-     
+        run: |
+          curl -Ls "https://get.maestro.mobile.dev" | bash
+          echo "$HOME/.maestro/bin" >> $GITHUB_PATH
+    
       - name: Clean CocoaPods Cache
         run: pod cache clean --all
 
