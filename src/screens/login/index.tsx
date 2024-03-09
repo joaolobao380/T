@@ -93,6 +93,7 @@ export const Login = () => {
                 errorMessage={errors.email?.message}
                 placeholder="Ex: email@email.com"
                 inputType="email-address"
+                testID="input_email_login_testID"
               />
             </View>
             <View style={styles.containerInputPassword}>
@@ -103,10 +104,16 @@ export const Login = () => {
                 name="password"
                 placeholder="Ex: •••••••••••"
                 inputType="password"
+                testID="input_password_login_testID"
               />
             </View>
             <View style={styles.containerButton}>
-              <Button title="Entrar" isLoading={isLoading} onPress={handleSubmit(onSubmit)} />
+              <Button
+                testID="button_login_testID"
+                title="Entrar"
+                isLoading={isLoading}
+                onPress={handleSubmit(onSubmit)}
+              />
             </View>
             <View style={styles.containerForgotPassword}>
               <TouchableOpacity onPress={() => navigate('ForgotPassword')}>

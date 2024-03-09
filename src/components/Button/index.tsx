@@ -7,9 +7,10 @@ interface ButtonProps {
   isLoading: boolean;
   onPress: () => void;
   title: string;
+  testID?: string;
 }
 
-export const Button = ({ isLoading, onPress, title }: ButtonProps) => {
+export const Button = ({ isLoading, onPress, title, testID = '' }: ButtonProps) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const handlePressIn = () => {
@@ -22,6 +23,7 @@ export const Button = ({ isLoading, onPress, title }: ButtonProps) => {
 
   return (
     <Pressable
+      testID={testID}
       onPress={onPress}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}

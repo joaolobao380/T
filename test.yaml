@@ -1,0 +1,13 @@
+appId: com.jv.t
+---
+- openLink: exp://192.168.1.8:8081
+- tapOn:
+    id: input_email_login_testID
+- inputText: "victor_jv380@hotmail.com"
+- tapOn:
+    id: input_password_login_testID
+- inputText: "98271742"
+- hideKeyboard
+
+- tapOn:
+    id: button_login_testID

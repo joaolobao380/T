@@ -1,3 +1,5 @@
+import { useAuth } from '@hooks/useAuth';
+import { signOut } from 'firebase/auth';
 import {
   User,
   Bell,
@@ -10,9 +12,10 @@ import {
   LogOut,
 } from 'lucide-react-native';
 import React from 'react';
-import { SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 export const Account = () => {
+  const { logout } = useAuth();
   return (
     <SafeAreaView>
       <View
@@ -160,7 +163,9 @@ export const Account = () => {
             </View>
           </View>
           <View style={{ height: 1, backgroundColor: '#B2B2B2', marginTop: 24 }} />
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 24 }}>
+          <TouchableOpacity
+            onPress={() => logout()}
+            style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 24 }}>
             <View>
               <LogOut color="#444444" size={24} strokeWidth={1.5} />
             </View>
@@ -180,7 +185,7 @@ export const Account = () => {
                 <ChevronRight color="#444444" size={24} strokeWidth={1.5} />
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
           <View style={{ height: 1, backgroundColor: '#B2B2B2', marginTop: 24 }} />
         </View>
       </ScrollView>
