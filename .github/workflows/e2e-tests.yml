@@ -22,8 +22,8 @@ jobs:
         with:
           node-version: '18.12.1'
 
-      - name: List available simulators
-        run: xcrun simctl list devices
+      # - name: List available simulators
+      #   run: xcrun simctl list devices
         
       - name: Install npm dependencies
         run: npm install --legacy-peer-deps
