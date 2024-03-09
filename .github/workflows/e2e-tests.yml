@@ -79,4 +79,4 @@ jobs:
 
       # Executar os testes de UI com o Maestro
       - name: Run Maestro Studio
-        run: maestro studio ./arquivo.yaml
+        run: maestro test test.yaml
